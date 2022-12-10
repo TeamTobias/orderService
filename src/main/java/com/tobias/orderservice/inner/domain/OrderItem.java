@@ -1,24 +1,34 @@
-package com.tobias.orderservice.inner.domain; ����ũ�μ���.order.inner.domain;
+package com.tobias.orderservice.inner.domain;
 
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+import com.tobias.orderservice.inner.domain.standardType.PurchaseConfirm;
+import com.tobias.orderservice.inner.domain.vo.BrandVo;
+import com.tobias.orderservice.inner.domain.vo.CatalogVo;
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class OrderItem {
 
-	private long id;
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Embedded
 	private BrandVo brandVo;
+
+	@Embedded
 	private CatalogVo catalogVo;
+
+	@Enumerated(EnumType.STRING)
 	private PurchaseConfirm purchaseConfirm;
 
-	public OrderItem(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

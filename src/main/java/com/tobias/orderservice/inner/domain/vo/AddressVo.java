@@ -1,22 +1,15 @@
-package com.tobias.orderservice.inner.domain.vo; ����ũ�μ���.order.inner.domain.vo;
+package com.tobias.orderservice.inner.domain.vo;
 
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+import javax.persistence.Embeddable;
+
+@Data
+@Embeddable
 public class AddressVo {
 
 	private String address;
 	private String addressDetail;
 
-	public AddressVo(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

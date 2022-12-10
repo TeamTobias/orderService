@@ -1,24 +1,29 @@
-package com.tobias.orderservice.inner.domain; ����ũ�μ���.order.inner.domain;
+package com.tobias.orderservice.inner.domain;
 
+import lombok.*;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
-public class OrderInfo {
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
-	private long id;
+@Entity
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
+public class OrderInfo implements Serializable {
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	private long userid;
-	public DestinationInfo destinationInfos;
-	public DestinationInfo m_DestinationInfo;
 
-	public OrderInfo(){
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@ToString.Exclude
+	private Set<DestinationInfo> destinationInfos = new HashSet<>();
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

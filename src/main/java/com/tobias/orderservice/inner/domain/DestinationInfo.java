@@ -1,28 +1,40 @@
 package com.tobias.orderservice.inner.domain;
 
-����ũ�μ���.order.inner.domain;
+import com.tobias.orderservice.inner.domain.vo.AddressVo;
+import com.tobias.orderservice.inner.domain.vo.ConsigneeVo;
+import lombok.*;
+import org.hibernate.Hibernate;
 
-import ����ũ�μ���.order.inner.domain.vo.ConsigneeVo;
-import ����ũ�μ���.order.inner.domain.vo.AddressVo;
+import javax.persistence.*;
+import java.util.Objects;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+@Entity
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class DestinationInfo {
 
-	private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Embedded
 	private ConsigneeVo consigneeVo;
+
+	@Embedded
 	private AddressVo addressVo;
-	public AddressVo m_AddressVo;
 
-	public DestinationInfo(){
-
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+		DestinationInfo that = (DestinationInfo) o;
+		return id != null && Objects.equals(id, that.id);
 	}
 
-	public void finalize() throws Throwable {
-
+	@Override
+	public int hashCode() {
+		return getClass().hashCode();
 	}
-
 }
