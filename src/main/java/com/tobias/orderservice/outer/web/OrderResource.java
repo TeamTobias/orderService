@@ -1,61 +1,35 @@
 package com.tobias.orderservice.outer.web;
 
-����ũ�μ���.order.outer.web;
+import com.tobias.orderservice.outer.dto.OrderRequest;
+import com.tobias.orderservice.outer.dto.OrderResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import ����ũ�μ���.order.inner.impl.OrderServiceImpl;
+import java.util.List;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+@RestController
 public class OrderResource {
 
-	public OrderResource(){
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param orderRequest
-	 */
-	public ResponseEntity<String> orderRequest(OrderRequest orderRequest){
+	public ResponseEntity<String> orderRequest(@RequestBody OrderRequest orderRequest){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param userid
-	 */
-	public ResponseEntity<List<OrderResponse>> orderResponse(long userid){
+	public ResponseEntity<List<OrderResponse>> orderResponse(@PathVariable long userid){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param orderid
-	 */
-	public ResponseEntity<String> orderDelete(long orderid){
+	public ResponseEntity<String> orderDelete(@PathVariable long orderid){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param catalogname
-	 */
-	public ResponseEntity<List<OrderResponse>> orderSearchRequest(String catalogname){
+	public ResponseEntity<List<OrderResponse>> orderSearchRequest(@RequestBody String catalogname){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param orderitemid
-	 */
-	public ResponseEntity<String> purchaseConfirmRequest(long orderitemid){
+	public ResponseEntity<String> purchaseConfirmRequest(@PathVariable long orderitemid){
 		return null;
 	}
 

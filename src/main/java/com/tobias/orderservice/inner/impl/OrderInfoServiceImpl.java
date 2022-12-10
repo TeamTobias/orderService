@@ -1,9 +1,14 @@
 package com.tobias.orderservice.inner.impl;
 
 import com.tobias.orderservice.inner.service.OrderInfoService;
+import com.tobias.orderservice.outer.dto.OrderInfoPutRequest;
+import com.tobias.orderservice.outer.dto.OrderInfoRequest;
+import com.tobias.orderservice.outer.dto.OrderInfoResponse;
 import com.tobias.orderservice.outer.repository.OrderInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -13,34 +18,22 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
 
 
-	/**
-	 * 
-	 * @param orderInfoRequest
-	 */
+	@Override
 	public void orderInfoRequest(OrderInfoRequest orderInfoRequest){
 
 	}
 
-	/**
-	 * 
-	 * @param userid
-	 */
+	@Override
 	public List<OrderInfoResponse> orderInfoResponse(long userid){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param orderInfoPutRequest
-	 */
+	@Override
 	public void orderInfoPutRequest(OrderInfoPutRequest orderInfoPutRequest){
 
 	}
 
-	/**
-	 * 
-	 * @param destinationInfoid
-	 */
+	@Override
 	public void orderInfoDelete(long destinationInfoid){
 
 	}

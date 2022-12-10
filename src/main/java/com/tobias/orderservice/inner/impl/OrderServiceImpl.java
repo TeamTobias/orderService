@@ -2,9 +2,13 @@ package com.tobias.orderservice.inner.impl;
 
 
 import com.tobias.orderservice.inner.service.OrderService;
+import com.tobias.orderservice.outer.dto.OrderRequest;
+import com.tobias.orderservice.outer.dto.OrderResponse;
 import com.tobias.orderservice.outer.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -12,40 +16,29 @@ public class OrderServiceImpl implements OrderService {
 
 	private final OrderRepository orderRepository;
 
-	public void orderRequest(OrderRequest orderRequest){
+
+	@Override
+	public void orderRequest(OrderRequest orderRequest) {
 
 	}
 
-	/**
-	 * 
-	 * @param userid
-	 */
-	public List<OrderResponse> orderResponse(long userid){
+	@Override
+	public List<OrderResponse> orderResponse(long userid) {
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param orderid
-	 */
-	public void orderDelete(long orderid){
+	@Override
+	public void orderDelete(long orderid) {
 
 	}
 
-	/**
-	 * 
-	 * @param catalogname
-	 */
-	public List<OrderResponse> orderSearchRequest(String catalogname){
+	@Override
+	public List<OrderResponse> orderSearchRequest(String catalogname) {
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param orderitemid
-	 */
-	public void purchaseConfirmRequest(long orderitemid){
+	@Override
+	public void purchaseConfirmRequest(long orderitemid) {
 
 	}
-
 }

@@ -1,41 +1,21 @@
-package com.tobias.orderservice.inner.service; ����ũ�μ���.order.inner.service;
+package com.tobias.orderservice.inner.service;
+
+import com.tobias.orderservice.outer.dto.OrderRequest;
+import com.tobias.orderservice.outer.dto.OrderResponse;
+
+import java.util.List;
 
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
 public interface OrderService {
 
-	/**
-	 * 
-	 * @param orderRequest
-	 */
-	public void orderRequest(OrderRequest orderRequest);
+	 void orderRequest(OrderRequest orderRequest);
 
-	/**
-	 * 
-	 * @param userid
-	 */
-	public List<OrderResponse> orderResponse(long userid);
+	 List<OrderResponse> orderResponse(long userid);
 
-	/**
-	 * 
-	 * @param orderid
-	 */
-	public void orderDelete(long orderid);
+	 void orderDelete(long orderid);
 
-	/**
-	 * 
-	 * @param catalogname
-	 */
-	public List<OrderResponse> orderSearchRequest(String catalogname);
+	 List<OrderResponse> orderSearchRequest(String catalogname);
 
-	/**
-	 * 
-	 * @param orderitemid
-	 */
-	public void purchaseConfirmRequest(long orderitemid);
+	 void purchaseConfirmRequest(long orderitemid);
 
 }

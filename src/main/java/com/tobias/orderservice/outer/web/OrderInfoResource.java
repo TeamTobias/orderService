@@ -1,53 +1,32 @@
 package com.tobias.orderservice.outer.web;
 
-����ũ�μ���.order.outer.web;
+import com.tobias.orderservice.outer.dto.OrderInfoPutRequest;
+import com.tobias.orderservice.outer.dto.OrderInfoRequest;
+import com.tobias.orderservice.outer.dto.OrderInfoResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import ����ũ�μ���.order.inner.impl.OrderInfoServiceImpl;
+import java.util.List;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+@RestController
 public class OrderInfoResource {
 
-	public OrderInfoResource(){
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param orderInfoRequest
-	 */
-	public ResponseEntity<String> orderInfoRequest(OrderInfoRequest orderInfoRequest){
+	public ResponseEntity<String> orderInfoRequest(@RequestBody OrderInfoRequest orderInfoRequest){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param userid
-	 */
-	public ResponseEntity<List<OrderInfoResponse>> orderInfoResponse(long userid){
+	public ResponseEntity<List<OrderInfoResponse>> orderInfoResponse(@PathVariable long userid){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param orderInfoPutRequest
-	 */
-	public ResponseEntity<String> orderInfoPutRequest(OrderInfoPutRequest orderInfoPutRequest){
+	public ResponseEntity<String> orderInfoPutRequest(@RequestBody OrderInfoPutRequest orderInfoPutRequest){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param destinationInfoid
-	 */
-	public ResponseEntity<String> orderInfoDelete(long destinationInfoid){
+	public ResponseEntity<String> orderInfoDelete(@PathVariable long destinationInfoid){
 		return null;
 	}
 

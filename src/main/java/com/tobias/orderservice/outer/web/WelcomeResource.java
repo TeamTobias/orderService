@@ -1,23 +1,25 @@
-package com.tobias.orderservice.outer.web; ����ũ�μ���.order.outer.web;
+package com.tobias.orderservice.outer.web;
 
+import com.tobias.orderservice.outer.dto.ResponseMessage;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:44
- */
+@RestController
+@RequiredArgsConstructor
 public class WelcomeResource {
 
-	public WelcomeResource(){
+	private final Environment environment;
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	public ResponseEntity<String> welcome(){
-		return null;
+	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
+	@GetMapping("/welcome")
+	public ResponseEntity<ResponseMessage> welcome(){
+		return ResponseEntity.ok(new ResponseMessage(environment.getProperty("welcome.message")));
 	}
 
 }

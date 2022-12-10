@@ -1,11 +1,9 @@
-package com.tobias.orderservice.outer.repository; ����ũ�μ���.order.outer.repository;
+package com.tobias.orderservice.outer.repository;
 
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
-public interface OrderRepository {
+import com.tobias.orderservice.inner.domain.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
 }
