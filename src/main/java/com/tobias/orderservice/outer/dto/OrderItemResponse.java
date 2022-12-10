@@ -1,11 +1,9 @@
-package com.tobias.orderservice.outer.dto; ����ũ�μ���.order.outer.dto;
+package com.tobias.orderservice.outer.dto;
 
+import com.tobias.orderservice.inner.domain.standardType.PurchaseConfirm;
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+@Data
 public class OrderItemResponse {
 
 	private long id;
@@ -20,12 +18,5 @@ public class OrderItemResponse {
 	private PurchaseConfirm purchaseConfirm;
 	public OrderResponse m_OrderResponse;
 
-	public OrderItemResponse(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

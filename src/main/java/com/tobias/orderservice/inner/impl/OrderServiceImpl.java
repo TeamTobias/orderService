@@ -1,30 +1,17 @@
 package com.tobias.orderservice.inner.impl;
 
-����ũ�μ���.order.inner.impl;
 
-import ����ũ�μ���.order.outer.repository.OrderRepository;
-import ����ũ�μ���.order.inner.domain.Order;
-import ����ũ�μ���.order.inner.service.OrderService;
+import com.tobias.orderservice.inner.service.OrderService;
+import com.tobias.orderservice.outer.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+@Service
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
-	public OrderServiceImpl(){
+	private final OrderRepository orderRepository;
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param orderRequest
-	 */
 	public void orderRequest(OrderRequest orderRequest){
 
 	}

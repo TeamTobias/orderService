@@ -1,11 +1,8 @@
-package com.tobias.orderservice.outer.dto; ����ũ�μ���.order.outer.dto;
+package com.tobias.orderservice.outer.dto;
 
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+@Data
 public class OrderInfoRequest {
 
 	private long userid;
@@ -14,12 +11,5 @@ public class OrderInfoRequest {
 	private String address;
 	private String addressDetail;
 
-	public OrderInfoRequest(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

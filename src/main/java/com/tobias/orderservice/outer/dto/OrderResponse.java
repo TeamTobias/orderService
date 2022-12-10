@@ -1,25 +1,18 @@
-package com.tobias.orderservice.outer.dto; ����ũ�μ���.order.outer.dto;
+package com.tobias.orderservice.outer.dto;
 
+import com.tobias.orderservice.inner.domain.standardType.OrderStatus;
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 10-12-2022 ���� 7:22:43
- */
+import java.util.Date;
+import java.util.List;
+
+@Data
 public class OrderResponse {
 
 	private long id;
 	private Date createdAt;
-	private int TotalPrice;
+	private int totalPrice;
 	private OrderStatus orderStatus;
 	private List<OrderItemResponse> orderItemResponseList;
-
-	public OrderResponse(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }
