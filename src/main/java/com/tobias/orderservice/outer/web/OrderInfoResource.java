@@ -35,13 +35,15 @@ public class OrderInfoResource {
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@PutMapping("/v1")
 	public ResponseEntity<String> orderInfoPutRequest(@RequestBody OrderInfoPutRequest orderInfoPutRequest){
-		return null;
+		orderInfoService.orderInfoPutRequest(orderInfoPutRequest);
+		return ResponseEntity.ok("OrderInfoPutRequest Success");
 	}
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@DeleteMapping("/v1/{destinationInfoid}")
 	public ResponseEntity<String> orderInfoDelete(@PathVariable long destinationInfoid){
 		orderInfoService.orderInfoDelete(destinationInfoid);
+		return ResponseEntity.ok("OrderInfoDelete Success");
 	}
 
 }
