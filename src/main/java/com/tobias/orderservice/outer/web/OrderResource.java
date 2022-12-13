@@ -50,7 +50,7 @@ public class OrderResource {
     @Operation(summary = "주문 내역 검색")
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = OrderResponse.class))))
     @GetMapping("/v1/orderSearchRequest/{catalogname}")
-    public ResponseEntity<List<OrderResponse>> orderSearchRequest(@RequestBody String catalogname) {
+    public ResponseEntity<List<OrderResponse>> orderSearchRequest(@PathVariable String catalogname) {
         return null;
     }
 
