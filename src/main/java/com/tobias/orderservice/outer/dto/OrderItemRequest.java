@@ -2,7 +2,6 @@ package com.tobias.orderservice.outer.dto;
 
 import lombok.Data;
 
-import java.util.List;
 
 @Data
 public class OrderItemRequest {

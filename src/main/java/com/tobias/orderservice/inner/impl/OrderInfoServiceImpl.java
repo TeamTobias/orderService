@@ -1,6 +1,5 @@
 package com.tobias.orderservice.inner.impl;
 
-import com.tobias.orderservice.inner.domain.Order;
 import com.tobias.orderservice.inner.domain.OrderInfo;
 import com.tobias.orderservice.inner.service.OrderInfoService;
 import com.tobias.orderservice.outer.dto.OrderInfoPutRequest;
