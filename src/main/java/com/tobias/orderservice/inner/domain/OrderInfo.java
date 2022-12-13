@@ -14,8 +14,6 @@ import java.util.Set;
 @ToString
 @RequiredArgsConstructor
 public class OrderInfo implements Serializable {
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

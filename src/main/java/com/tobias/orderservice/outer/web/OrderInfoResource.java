@@ -29,7 +29,8 @@ public class OrderInfoResource {
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = OrderInfoResponse.class))))
 	@GetMapping("/v1/{userid}")
 	public ResponseEntity<List<OrderInfoResponse>> orderInfoResponse(@PathVariable long userid){
-		return null;
+		List<OrderInfoResponse> orderInfoResponses = orderInfoService.orderInfoResponse(userid);
+		return ResponseEntity.ok(orderInfoResponses);
 	}
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))

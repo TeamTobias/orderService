@@ -1,5 +1,6 @@
 package com.tobias.orderservice.inner.impl;
 
+import com.tobias.orderservice.inner.domain.Order;
 import com.tobias.orderservice.inner.domain.OrderInfo;
 import com.tobias.orderservice.inner.service.OrderInfoService;
 import com.tobias.orderservice.outer.dto.OrderInfoPutRequest;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -26,8 +28,8 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
 	@Override
 	public List<OrderInfoResponse> orderInfoResponse(long userid){
-
-		return null;
+		List<OrderInfo> orderInfos = orderInfoRepository.findAllByUserid(userid);
+		return orderInfos.stream().map(OrderInfoResponse::new).collect(Collectors.toList());
 	}
 
 	@Override

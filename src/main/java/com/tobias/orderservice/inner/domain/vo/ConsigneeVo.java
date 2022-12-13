@@ -10,5 +10,4 @@ public class ConsigneeVo {
 
 	private String name;
 	private String phoneNum;
-
 }
