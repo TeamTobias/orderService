@@ -1,6 +1,7 @@
 package com.tobias.orderservice.inner.impl;
 
 
+import com.tobias.orderservice.inner.domain.Order;
 import com.tobias.orderservice.inner.service.OrderService;
 import com.tobias.orderservice.outer.dto.OrderRequest;
 import com.tobias.orderservice.outer.dto.OrderResponse;
@@ -19,6 +20,8 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public void orderRequest(OrderRequest orderRequest) {
+		Order order = new Order(orderRequest);
+
 
 	}
 

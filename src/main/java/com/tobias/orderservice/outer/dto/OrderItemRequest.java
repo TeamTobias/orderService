@@ -15,6 +15,6 @@ public class OrderItemRequest {
 	private String color;
 	private int size;
 	private int unitPrice;
-	private List<OrderRequest> orderRequestList;
+//	private List<OrderRequest> orderRequestList;
 
 }
