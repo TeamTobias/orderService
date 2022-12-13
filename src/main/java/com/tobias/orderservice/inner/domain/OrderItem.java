@@ -15,7 +15,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@RequiredArgsConstructor
 public class OrderItem {
 
 	@Id
