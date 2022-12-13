@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orderinfo")
+@CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600, allowCredentials = "true", exposedHeaders = "Authorization")
 @RequiredArgsConstructor
 public class OrderInfoResource {
 
