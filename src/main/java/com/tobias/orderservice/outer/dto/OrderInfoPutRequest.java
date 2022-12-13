@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class OrderInfoPutRequest {
 
+	private long id;
 	private long userid;
 	private long destinationInfoid;
 	private String name;

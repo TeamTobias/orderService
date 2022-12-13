@@ -1,10 +1,12 @@
 package com.tobias.orderservice.outer.web;
 
+import com.tobias.orderservice.inner.service.OrderInfoService;
 import com.tobias.orderservice.outer.dto.*;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orderinfo")
+@RequiredArgsConstructor
 public class OrderInfoResource {
+
+	private final OrderInfoService orderInfoService;
 
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
@@ -36,7 +41,7 @@ public class OrderInfoResource {
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@DeleteMapping("/v1/{destinationInfoid}")
 	public ResponseEntity<String> orderInfoDelete(@PathVariable long destinationInfoid){
-		return null;
+		orderInfoService.orderInfoDelete(destinationInfoid);
 	}
 
 }

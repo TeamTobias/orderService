@@ -2,6 +2,7 @@ package com.tobias.orderservice.inner.domain;
 
 import com.tobias.orderservice.inner.domain.vo.AddressVo;
 import com.tobias.orderservice.inner.domain.vo.ConsigneeVo;
+import com.tobias.orderservice.outer.dto.OrderInfoPutRequest;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -36,5 +37,12 @@ public class DestinationInfo {
 	@Override
 	public int hashCode() {
 		return getClass().hashCode();
+	}
+
+	public void setOrderInfoRequest(OrderInfoPutRequest orderInfoPutRequest) {
+		this.consigneeVo.setName(orderInfoPutRequest.getName());
+		this.consigneeVo.setPhoneNum(orderInfoPutRequest.getPhoneNum());
+		this.addressVo.setAddress(orderInfoPutRequest.getAddress());
+		this.addressVo.setAddressDetail(orderInfoPutRequest.getAddressDetail());
 	}
 }
