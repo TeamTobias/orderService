@@ -1,15 +1,17 @@
 package com.tobias.orderservice.outer.dto;
 
+import com.tobias.orderservice.inner.domain.DestinationInfo;
 import lombok.Data;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 public class OrderInfoRequest {
 
 	private long userid;
-	private String name;
-	private String phoneNum;
-	private String address;
-	private String addressDetail;
+
+	private Set<DestinationInfoRequest> destinationInfoRequests;
 
 
 }

@@ -23,7 +23,8 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
 	@Override
 	public void orderInfoRequest(OrderInfoRequest orderInfoRequest){
-
+		OrderInfo orderInfo = new OrderInfo(orderInfoRequest);
+		orderInfoRepository.save(orderInfo);
 	}
 
 	@Override

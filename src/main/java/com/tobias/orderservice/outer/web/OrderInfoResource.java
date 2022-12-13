@@ -23,7 +23,8 @@ public class OrderInfoResource {
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@PostMapping("/v1")
 	public ResponseEntity<String> orderInfoRequest(@RequestBody OrderInfoRequest orderInfoRequest){
-		return null;
+		orderInfoService.orderInfoRequest(orderInfoRequest);
+		return ResponseEntity.ok("success");
 	}
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = OrderInfoResponse.class))))
