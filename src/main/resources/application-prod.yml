@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8007
 
 spring:
   application:
@@ -13,13 +13,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    hibernate:
+      ddl-auto: create
     show-sql: true
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-      settings:
-        web-allow-others: true
+
 
 springdoc:
   swagger-ui:

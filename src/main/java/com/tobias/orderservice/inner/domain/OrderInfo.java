@@ -29,7 +29,7 @@ public class OrderInfo implements Serializable {
 
     public void setOrderInfoRequest(OrderInfoPutRequest orderInfoPutRequest) {
         for (DestinationInfo destinationInfo : destinationInfos)
-            if(destinationInfo.getId() == orderInfoPutRequest.getDestinationInfoid()) destinationInfo.setOrderInfoRequest(orderInfoPutRequest);
+            if(destinationInfo.getId() == orderInfoPutRequest.getDestinationInfoRequest().getId()) destinationInfo.setOrderInfoRequest(orderInfoPutRequest);
     }
 
 

@@ -1,5 +1,6 @@
 package com.tobias.orderservice.inner.domain.vo;
 
+import com.tobias.orderservice.outer.dto.ConsigneeVoRequest;
 import com.tobias.orderservice.outer.dto.DestinationInfoRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +22,10 @@ public class ConsigneeVo implements Serializable {
 	public ConsigneeVo(DestinationInfoRequest destinationInfoRequest) {
 		this.name = destinationInfoRequest.getConsigneeVoRequest().getName();
 		this.phoneNum = destinationInfoRequest.getConsigneeVoRequest().getPhoneNum();
+	}
+
+	public ConsigneeVo(ConsigneeVoRequest consigneeVoRequest) {
+		this.name = consigneeVoRequest.getName();
+		this.phoneNum = consigneeVoRequest.getPhoneNum();
 	}
 }
