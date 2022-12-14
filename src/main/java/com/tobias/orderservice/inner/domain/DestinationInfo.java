@@ -43,10 +43,8 @@ public class DestinationInfo implements Serializable {
 	}
 
 	public void setOrderInfoRequest(OrderInfoPutRequest orderInfoPutRequest) {
-		this.consigneeVo.setName(orderInfoPutRequest.getName());
-		this.consigneeVo.setPhoneNum(orderInfoPutRequest.getPhoneNum());
-		this.addressVo.setAddress(orderInfoPutRequest.getAddress());
-		this.addressVo.setAddressDetail(orderInfoPutRequest.getAddressDetail());
+		this.consigneeVo = new ConsigneeVo(orderInfoPutRequest.getDestinationInfoRequest().getConsigneeVoRequest());
+		this.addressVo = new AddressVo(orderInfoPutRequest.getDestinationInfoRequest().getAddressVoRequest());
 	}
 
 

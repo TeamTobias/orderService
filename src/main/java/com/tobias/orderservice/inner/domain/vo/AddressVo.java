@@ -1,5 +1,6 @@
 package com.tobias.orderservice.inner.domain.vo;
 
+import com.tobias.orderservice.outer.dto.AddressVoRequest;
 import com.tobias.orderservice.outer.dto.DestinationInfoRequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,4 +23,8 @@ public class AddressVo implements Serializable {
 		this.addressDetail = destinationInfoRequest.getAddressVoRequest().getAddressDetail();
 	}
 
+	public AddressVo(AddressVoRequest addressVoRequest) {
+		this.address = addressVoRequest.getAddress();
+		this.addressDetail = addressVoRequest.getAddressDetail();
+	}
 }
