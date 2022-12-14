@@ -36,7 +36,8 @@ public class OrderResource {
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
     @GetMapping("/v1/orderResponse/{userid}")
     public ResponseEntity<List<OrderResponse>> orderResponse(@PathVariable long userid) {
-        return null;
+        List<OrderResponse> orderResponses = orderService.orderResponse(userid);
+        return ResponseEntity.ok(orderResponses);
     }
 
 
@@ -44,14 +45,16 @@ public class OrderResource {
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
     @DeleteMapping("/v1/orderDelete/{orderid}")
     public ResponseEntity<String> orderDelete(@PathVariable long orderid) {
-        return null;
+        orderService.orderDelete(orderid);
+        return ResponseEntity.ok("success");
     }
 
     @Operation(summary = "주문 내역 검색")
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = OrderResponse.class))))
     @GetMapping("/v1/orderSearchRequest/{catalogname}")
-    public ResponseEntity<List<OrderResponse>> orderSearchRequest(@PathVariable String catalogname) {
-        return null;
+    public ResponseEntity<List<OrderResponse>> orderSearchRequest(@PathVariable long userid, @PathVariable String catalogname) {
+        List<OrderResponse> orderResponses = orderService.orderSearchRequest(userid, catalogname);
+        return ResponseEntity.ok(orderResponses);
     }
 
 
@@ -59,7 +62,8 @@ public class OrderResource {
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
     @PutMapping("/v1/purchaseConfirmRequest/{orderitemid}")
     public ResponseEntity<String> purchaseConfirmRequest(@PathVariable long orderitemid) {
-        return null;
+        orderService.purchaseConfirmRequest(orderitemid);
+        return ResponseEntity.ok("success");
     }
 
 }

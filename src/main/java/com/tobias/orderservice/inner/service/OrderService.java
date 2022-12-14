@@ -14,7 +14,7 @@ public interface OrderService {
 
 	 void orderDelete(long orderid);
 
-	 List<OrderResponse> orderSearchRequest(String catalogname);
+	 List<OrderResponse> orderSearchRequest(long userid, String catalogname);
 
 	 void purchaseConfirmRequest(long orderitemid);
 
