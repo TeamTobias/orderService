@@ -1,14 +1,25 @@
 package com.tobias.orderservice.inner.domain.vo;
 
+import com.tobias.orderservice.outer.dto.DestinationInfoRequest;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Embeddable
 @Data
-public class ConsigneeVo {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ConsigneeVo implements Serializable {
 
 	private String name;
 	private String phoneNum;
 
+
+	public ConsigneeVo(DestinationInfoRequest destinationInfoRequest) {
+		this.name = destinationInfoRequest.getConsigneeVoRequest().getName();
+		this.phoneNum = destinationInfoRequest.getConsigneeVoRequest().getPhoneNum();
+	}
 }

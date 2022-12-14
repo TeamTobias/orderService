@@ -1,6 +1,7 @@
 package com.tobias.orderservice.inner.domain;
 
 import com.tobias.orderservice.inner.domain.vo.PayVo;
+import com.tobias.orderservice.outer.dto.OrderRequest;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.springframework.data.annotation.CreatedBy;
@@ -10,6 +11,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -32,6 +34,11 @@ public class Order {
 
 	@Embedded
 	private PayVo payVo;
+
+	public Order(OrderRequest orderRequest) {
+		this.userid = orderRequest.getUserid();
+		orderRequest.getOrderItemRequests().stream().map(OrderItem::new).collect(Collectors.toList());
+	}
 
 
 	@Override

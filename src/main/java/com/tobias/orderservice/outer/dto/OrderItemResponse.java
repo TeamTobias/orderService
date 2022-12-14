@@ -3,6 +3,8 @@ package com.tobias.orderservice.outer.dto;
 import com.tobias.orderservice.inner.domain.standardType.PurchaseConfirm;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class OrderItemResponse {
 
@@ -14,9 +16,9 @@ public class OrderItemResponse {
 	private String name;
 	private String color;
 	private int size;
-	private int unit_price;
+	private int unitPrice;
 	private PurchaseConfirm purchaseConfirm;
-	public OrderResponse m_OrderResponse;
+	private List<OrderResponse> orderResponseList;
 
 
 }
