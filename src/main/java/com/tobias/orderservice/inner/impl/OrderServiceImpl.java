@@ -21,13 +21,14 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public void orderRequest(OrderRequest orderRequest) {
 		Order order = new Order(orderRequest);
-
-
+		orderRepository.save(order);
 	}
 
 	@Override
 	public List<OrderResponse> orderResponse(long userid) {
-		return null;
+		List<Order> orders = orderRepository.findAllById(userid);
+
+
 	}
 
 	@Override
@@ -37,6 +38,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public List<OrderResponse> orderSearchRequest(String catalogname) {
+
 		return null;
 	}
 
