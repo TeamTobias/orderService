@@ -27,6 +27,12 @@ spring:
     show-sql: true
 
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
