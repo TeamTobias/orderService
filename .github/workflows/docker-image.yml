@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile-CICD
+          file: ./Dockerfile-CI
           platforms: linux/amd64
           push: true
           tags: imkunyoung/orderservice:1.0
